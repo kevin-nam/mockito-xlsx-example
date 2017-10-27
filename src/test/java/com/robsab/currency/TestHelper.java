@@ -45,10 +45,10 @@ public class TestHelper {
   // Setup Chrome Driver depending on OS
   private static void setupChromeDriver() {
     String os = System.getProperty("os.name").toLowerCase();
-    if (os.equals("win")) {
-      System.setProperty("webdriver.chrome.driver", PATH_TO_CHROME_DRIVER_WINDOWS);
-    } else {
+    if (os.contains("mac")) {
       System.setProperty("webdriver.chrome.driver", PATH_TO_CHROME_DRIVER_MAC);
+    } else {
+      System.setProperty("webdriver.chrome.driver", PATH_TO_CHROME_DRIVER_WINDOWS);
     }
     driver = new ChromeDriver();
   }

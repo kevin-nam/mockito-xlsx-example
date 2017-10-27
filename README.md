@@ -62,4 +62,11 @@ Three tests (found under src/test/robsab/currency) have been implemented to expr
 3. testApplicationWithoutXlsxWriter()
   * Runs the application while mocking the Xlsx class and verifies that the converted calculated random value is equal to the converted value from the Bank of Canada.
   * Good example of having no xlsx writing/reading capabilities
+  
+## References
 
+Apache POI for HSSF and XSSF Quick Guide [Link](https://poi.apache.org/spreadsheet/quick-guide.html)
+
+Mockito [Link](http://site.mockito.org/)
+
+Selenium [Link](http://www.seleniumhq.org/)
