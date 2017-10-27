@@ -42,6 +42,7 @@ public class CurrencyRateLookup {
   }
 
   public CurrencyRate lookupHighestCurrencyRate() {
+    System.out.println("Looking up " + BANK_OF_CANADA_CURRENCY_LOOK_UP_URL + " for highest currency rate of this year...");
     driver.get(BANK_OF_CANADA_CURRENCY_LOOK_UP_URL);
 
     // Input value
@@ -65,6 +66,8 @@ public class CurrencyRateLookup {
 
     // Get highest rate information
     String[] rates = rateTable.getText().split("\n")[2].split(" ");
+
+    System.out.println("Got currency rate: " + rates[2] + " for date " + rates[1]);
 
     // Close chrome driver
     driver.quit();

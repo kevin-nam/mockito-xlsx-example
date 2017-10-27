@@ -51,6 +51,8 @@ public class CurrencyRateXlsxApplication {
    * (by default: converted-currency.xlsx)
    */
   public CurrencyRate convertValueAndWriteToXlsx(double valueToBeConverted) {
+    System.out.println("Starting application...");
+
     // Get highest currency rate
     CurrencyRate currencyRate = currencyRateLookup.lookupHighestCurrencyRate();
 

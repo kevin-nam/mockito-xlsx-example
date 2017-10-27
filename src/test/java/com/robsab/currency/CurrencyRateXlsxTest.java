@@ -25,6 +25,8 @@ public class CurrencyRateXlsxTest {
   public void setup() {
     randomValue = formatValue((new Random()).nextDouble(), 100);
     randomRate = (new Random()).nextDouble();
+
+    System.out.println("Testing with randomValue = " + randomValue);
   }
 
   @Test
@@ -75,8 +77,9 @@ public class CurrencyRateXlsxTest {
 
   private double formatValue(double value, double rate) {
     DecimalFormat df = new DecimalFormat("#.##");
-    df.setRoundingMode(RoundingMode.CEILING);
-    return Double.valueOf(df.format(value * rate));
+    df.setRoundingMode(RoundingMode.HALF_UP);
+    Double formattedValue = Double.valueOf(df.format(value * rate));
+    return formattedValue;
   }
 
   private CurrencyRate createRandomCurrencyRate() {

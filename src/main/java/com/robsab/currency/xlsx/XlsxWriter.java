@@ -29,7 +29,7 @@ public class XlsxWriter {
 
     // Get converted value based on currency rate and format appropriately
     DecimalFormat df = new DecimalFormat("#.##");
-    df.setRoundingMode(RoundingMode.CEILING);
+    df.setRoundingMode(RoundingMode.HALF_UP);
     double convertedValue = Double.valueOf(df.format(value * currencyRate.getRate()));
 
     // Form table to write
@@ -38,7 +38,7 @@ public class XlsxWriter {
         {String.format("%.2f", value), currencyRate.getRate(), String.format("%.2f", convertedValue)},
     };
 
-    System.out.println("Creating xlsx file...");
+    System.out.println("Creating " + FILE_NAME + " file...");
 
     // Iterate through table by row
     int rowNum = 0;
