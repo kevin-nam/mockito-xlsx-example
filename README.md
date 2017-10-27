@@ -48,7 +48,7 @@ Using Maven, all dependencies can be easily acquired and used. Refer to */pom.xm
   * Class used to write (value, rate, converted value) to an xlsx file
 5. com.robsab.currency.**CurrencyRateXlsxApplication**
   * Contains the main method to demo the application
-  * Main class to test]
+  * Main class that we are test
 
 ## Tests Explained
 
@@ -58,6 +58,8 @@ Three tests (found under src/test/robsab/currency) have been implemented to expr
   * Runs the application as normal and verifies the converted random value in the xlsx file and the converted value from the Bank of Canada.
 2. testApplicationWithoutCurrencyRateLookup()
   * Runs the application while mocking the CurrencyRateLookup class and verifies that the converted random value in xlsx file is equal to a calculated expected value.
+  * Good example of having no web access
 3. testApplicationWithoutXlsxWriter()
   * Runs the application while mocking the Xlsx class and verifies that the converted calculated random value is equal to the converted value from the Bank of Canada.
+  * Good example of having no xlsx writing/reading capabilities
 
